@@ -42,8 +42,12 @@ Full terminal output for every test is in [`test-logs/`](test-logs/).
 | 5 | Loyalty discount | 4000 pts redeemed ($40), **10%** Gold discount ($11), final **$99.00**, **250** pts remaining | [test5](test-logs/test5-loyalty-discount.txt) |
 | 6 | Browser | Title: *"Learn the Latest Tech Skills; Advance Your Career \| Udacity"* | [test6](test-logs/test6-browser.txt) |
 
+| 7 | Gateway unavailable (dummy `GATEWAY_URL`) | Failure logged with `logger.exception`; agent replies that order tracking is temporarily unavailable and suggests next steps; loyalty calculation still returns **$99.00** | [test7](test-logs/test7-gateway-failure-handling.txt) |
+
 Tests 1 and 2 exercise one API-Gateway-backed and one Lambda-backed Gateway
-tool respectively.
+tool respectively. Every Gateway tool call in tests 1–2 returned a
+well-formed response (order record with tracking number; refund ID with
+APPROVED status). Test 7 is a local run added for the resubmission.
 
 Extra verification beyond the agent's replies:
 - **Test 4:** the memory resource holds the extracted records *"The user's
@@ -67,6 +71,17 @@ Extra verification beyond the agent's replies:
   the order, tier discount applied after points, earn rates 1/2/5 per $ for
   standard/device/fresh.
 - **Gateway tools** are loaded across all pages of `tools/list`.
+- **Gateway failure handling** — the MCP connection and tool loading run
+  inside `try/except` (`TimeoutError`, `ConnectionError`, any other
+  exception). Success is logged with `logger.info("Gateway connected
+  successfully. Loaded %d tools.")`; failures are logged with
+  `logger.exception(...)` naming only the Gateway host (never the full URL),
+  and the agent still runs without the Gateway tools. Its system prompt then
+  tells it the order and refund systems are temporarily unavailable, so the
+  customer gets a clear explanation and a safe next step instead of a crash,
+  while the Knowledge Base, Code Interpreter and Browser keep working. An
+  unavailable AgentCore Memory resource is handled the same way.
+  See [test7](test-logs/test7-gateway-failure-handling.txt).
 
 ## Differences from the written instructions
 

@@ -1,0 +1,73 @@
+# Gateway failure handling - local run of main.invoke() with an unreachable GATEWAY_URL
+# (tests the reviewer's scenario: dummy Gateway URL -> logged error + meaningful reply).
+# The project's AWS resources had been deleted, so AgentCore Memory is also unavailable;
+# that failure is logged too and the agent continues without it.
+# Python tracebacks printed by logger.exception() are trimmed below for readability.
+
+$ invoke {"prompt": "Can you track order ORD-001?", "customer_id": "CUST-123", "session_id": "gw-fail-1"}   # GATEWAY_URL=https://dummy-gateway.invalid/mcp
+ERROR CSAI_Agent: AgentCore Memory unavailable, continuing without it: An error occurred (ResourceNotFoundException) when calling the GetMemory operation: Resource not found during GetMemory: Failed to retrieve memory item for ID: CustomerSupportMemory-RNMTIWCpKn
+ERROR CSAI_Agent: Gateway tool loading failed (host: dummy-gateway.invalid): the client initialization failed: unhandled errors in a TaskGroup (1 sub-exception)
+
+
+I apologize, but I'm unable to track order ORD-001 at the moment. Our order-tracking system is temporarily unavailable. 
+
+To get the status of your order, I recommend:
+- Trying again in a few minutes
+- Checking your email for any order confirmation or shipping notifications
+- Visiting our website directly to use the order tracking feature there
+
+If you continue to experience issues or need immediate assistance with your order, please consider contacting our customer support team directly through our support channels. They can help you get the tracking information you need.
+Response:
+I apologize, but I'm unable to track order ORD-001 at the moment. Our order-tracking system is temporarily unavailable. 
+
+To get the status of your order, I recommend:
+- Trying again in a few minutes
+- Checking your email for any order confirmation or shipping notifications
+- Visiting our website directly to use the order tracking feature there
+
+If you continue to experience issues or need immediate assistance with your order, please consider contacting our customer support team directly through our support channels. They can help you get the tracking information you need.
+
+$ invoke {"prompt": "I am a Gold member with 4250 points. Calculate my discount on a $150 standard order.", "customer_id": "CUST-123", "session_id": "gw-fail-2"}   # GATEWAY_URL=https://dummy-gateway.invalid/mcp
+ERROR CSAI_Agent: AgentCore Memory unavailable, continuing without it: An error occurred (ResourceNotFoundException) when calling the GetMemory operation: Resource not found during GetMemory: Failed to retrieve memory item for ID: CustomerSupportMemory-RNMTIWCpKn
+ERROR CSAI_Agent: Gateway tool loading failed (host: dummy-gateway.invalid): the client initialization failed: unhandled errors in a TaskGroup (1 sub-exception)
+
+
+
+Tool #1: calculate_loyalty_discount
+As a Gold member with 4,250 points, here's your discount breakdown on the $150 standard order:
+
+**Your Savings:**
+- Points redeemed: 4,000 points ($40 value)
+- Gold tier discount: 10% ($11.00)
+- **Total savings: $51.00**
+
+**Order Details:**
+- Original total: $150.00
+- After points redemption: $110.00
+- After Gold discount: **$99.00**
+
+**Loyalty Points Update:**
+- Points earned from this purchase: 99 points
+- Remaining points: 250 points
+- New points balance: 349 points
+
+Your final order total is **$99.00**.
+Response:
+As a Gold member with 4,250 points, here's your discount breakdown on the $150 standard order:
+
+**Your Savings:**
+- Points redeemed: 4,000 points ($40 value)
+- Gold tier discount: 10% ($11.00)
+- **Total savings: $51.00**
+
+**Order Details:**
+- Original total: $150.00
+- After points redemption: $110.00
+- After Gold discount: **$99.00**
+
+**Loyalty Points Update:**
+- Points earned from this purchase: 99 points
+- Remaining points: 250 points
+- New points balance: 349 points
+
+Your final order total is **$99.00**.
