@@ -1,0 +1,34 @@
+$ agentcore invoke '{"prompt": "I want to return my Kindle Paperwhite (ORD-002). Please initiate a refund.", "customer_id": "CUST-123", "session_id": "t2"}'
+╭────────────────────────────────── csagent ───────────────────────────────────╮
+│ Session: 536853e7-bebd-484b-b276-a46703f9f246                                │
+│ Request ID: 9a513b18-e6f6-417d-bf41-6356724f5d76                             │
+│ ARN:                                                                         │
+│ arn:aws:bedrock-agentcore:us-east-1:020346160337:runtime/csagent-oyzZeSFzT2  │
+│ Logs: aws logs tail                                                          │
+│ /aws/bedrock-agentcore/runtimes/csagent-oyzZeSFzT2-DEFAULT                   │
+│ --log-stream-name-prefix "2026/10/29/[runtime-logs" --follow                 │
+│       aws logs tail                                                          │
+│ /aws/bedrock-agentcore/runtimes/csagent-oyzZeSFzT2-DEFAULT                   │
+│ --log-stream-name-prefix "2026/10/29/[runtime-logs" --since 1h               │
+│ GenAI Dashboard:                                                             │
+│ https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-obser │
+│ vability/agent-core                                                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+Perfect! I've processed your return and refund for your Kindle Paperwhite 
+(ORD-002).
+
+✅ **Refund Status:** Approved
+- Refund amount: $139.99
+- Credit will appear in your account in 3-5 business days
+- Refund ID: REF-OQJVQHHT
+
+📦 **Return Label:** 
+- Prepaid UPS return label available here: [Download Return 
+Label](https://returns.amazon.com/label/ORD-002)
+- Valid until: November 28, 2026
+
+Please print the return label and ship your Kindle Paperwhite back to us using 
+UPS. Once we receive and process your returned item, your refund will be 
+finalized.

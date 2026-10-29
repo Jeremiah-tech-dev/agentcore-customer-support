@@ -1,0 +1,33 @@
+$ agentcore invoke '{"prompt": "I am a Gold member with 4250 points. Calculate my discount on a $150 standard order.", "customer_id": "CUST-123", "session_id": "t5"}'
+╭────────────────────────────────── csagent ───────────────────────────────────╮
+│ Session: 536853e7-bebd-484b-b276-a46703f9f246                                │
+│ Request ID: aae436dd-1b1a-49ef-8958-559c7bab2502                             │
+│ ARN:                                                                         │
+│ arn:aws:bedrock-agentcore:us-east-1:020346160337:runtime/csagent-oyzZeSFzT2  │
+│ Logs: aws logs tail                                                          │
+│ /aws/bedrock-agentcore/runtimes/csagent-oyzZeSFzT2-DEFAULT                   │
+│ --log-stream-name-prefix "2026/10/29/[runtime-logs" --follow                 │
+│       aws logs tail                                                          │
+│ /aws/bedrock-agentcore/runtimes/csagent-oyzZeSFzT2-DEFAULT                   │
+│ --log-stream-name-prefix "2026/10/29/[runtime-logs" --since 1h               │
+│ GenAI Dashboard:                                                             │
+│ https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-obser │
+│ vability/agent-core                                                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+As a Gold member with 4250 points, your discount breakdown on the $150 standard 
+order is as follows:
+
+**Discount Details:**
+- Points Redeemed: 4000 points ($40 value)
+- Subtotal after points: $110.00
+- Gold Tier Discount: 10% ($11.00)
+- **Final Total:** $99.00
+
+**Savings Summary:**
+- Total Savings: $51.00
+- Points Earned from Purchase: 99 points
+- Remaining Points Balance: 250 points
+
+Your order will be charged **$99.00** after all discounts are applied.

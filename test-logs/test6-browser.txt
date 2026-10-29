@@ -1,0 +1,20 @@
+$ agentcore invoke '{"prompt": "Go to https://www.udacity.com and tell me the page title.", "customer_id": "CUST-123", "session_id": "t6"}'
+╭────────────────────────────────── csagent ───────────────────────────────────╮
+│ Session: 536853e7-bebd-484b-b276-a46703f9f246                                │
+│ Request ID: 2751eed3-855d-4df5-96a3-5124698d038f                             │
+│ ARN:                                                                         │
+│ arn:aws:bedrock-agentcore:us-east-1:020346160337:runtime/csagent-oyzZeSFzT2  │
+│ Logs: aws logs tail                                                          │
+│ /aws/bedrock-agentcore/runtimes/csagent-oyzZeSFzT2-DEFAULT                   │
+│ --log-stream-name-prefix "2026/10/29/[runtime-logs" --follow                 │
+│       aws logs tail                                                          │
+│ /aws/bedrock-agentcore/runtimes/csagent-oyzZeSFzT2-DEFAULT                   │
+│ --log-stream-name-prefix "2026/10/29/[runtime-logs" --since 1h               │
+│ GenAI Dashboard:                                                             │
+│ https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-obser │
+│ vability/agent-core                                                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+The page title of https://www.udacity.com is: **"Learn the Latest Tech Skills; 
+Advance Your Career | Udacity"**

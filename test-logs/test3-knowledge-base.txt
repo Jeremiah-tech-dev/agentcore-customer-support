@@ -1,0 +1,32 @@
+$ agentcore invoke '{"prompt": "What are the benefits of the Platinum loyalty tier?", "customer_id": "CUST-123", "session_id": "t3"}'
+╭────────────────────────────────── csagent ───────────────────────────────────╮
+│ Session: 536853e7-bebd-484b-b276-a46703f9f246                                │
+│ Request ID: 722b0b6b-cab5-4d84-937f-b62dccbeb4e5                             │
+│ ARN:                                                                         │
+│ arn:aws:bedrock-agentcore:us-east-1:020346160337:runtime/csagent-oyzZeSFzT2  │
+│ Logs: aws logs tail                                                          │
+│ /aws/bedrock-agentcore/runtimes/csagent-oyzZeSFzT2-DEFAULT                   │
+│ --log-stream-name-prefix "2026/10/29/[runtime-logs" --follow                 │
+│       aws logs tail                                                          │
+│ /aws/bedrock-agentcore/runtimes/csagent-oyzZeSFzT2-DEFAULT                   │
+│ --log-stream-name-prefix "2026/10/29/[runtime-logs" --since 1h               │
+│ GenAI Dashboard:                                                             │
+│ https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-obser │
+│ vability/agent-core                                                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+The Platinum loyalty tier offers several exclusive benefits:
+
+- **Free same-day shipping** on eligible orders
+- **15% discount** on purchases (higher than the 10% offered to Gold members)
+- **Priority customer support** for faster assistance
+- **Earning points**: 
+  - Standard items: 1 point per $1 spent
+  - Amazon devices: 2 points per $1 spent  
+  - Amazon Fresh: 5 points per $1 spent
+- **Redeeming points**: 100 points equals $1 discount, with a minimum redemption
+of 500 points
+- Points are valid for 2 years from the date earned
+
+To reach Platinum status, you need 5000 or more loyalty points.

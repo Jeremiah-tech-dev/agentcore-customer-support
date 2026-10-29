@@ -1,0 +1,22 @@
+$ agentcore invoke '{"prompt": "Hi, I am Jane. I prefer concise responses.", "customer_id": "CUST-123", "session_id": "s-A"}'
+╭────────────────────────────────── csagent ───────────────────────────────────╮
+│ Session: 536853e7-bebd-484b-b276-a46703f9f246                                │
+│ Request ID: 726d59f2-4a07-4206-9b2c-139591fb7246                             │
+│ ARN:                                                                         │
+│ arn:aws:bedrock-agentcore:us-east-1:020346160337:runtime/csagent-oyzZeSFzT2  │
+│ Logs: aws logs tail                                                          │
+│ /aws/bedrock-agentcore/runtimes/csagent-oyzZeSFzT2-DEFAULT                   │
+│ --log-stream-name-prefix "2026/10/29/[runtime-logs" --follow                 │
+│       aws logs tail                                                          │
+│ /aws/bedrock-agentcore/runtimes/csagent-oyzZeSFzT2-DEFAULT                   │
+│ --log-stream-name-prefix "2026/10/29/[runtime-logs" --since 1h               │
+│ GenAI Dashboard:                                                             │
+│ https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-obser │
+│ vability/agent-core                                                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+Hello Jane! I'll keep my responses concise. 
+
+How can I assist you today? If you have an order inquiry, need help with a 
+refund, or have any other questions, just let me know!
